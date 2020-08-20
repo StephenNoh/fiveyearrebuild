@@ -1,0 +1,182 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Draft lottery simulator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="top">
+        <h1>Five Year Rebuild: An NBA Draft Lottery Simulator</h1>
+    </div>
+    <div id = "uses">
+        <p>Imagine you are given five years to rebuild a franchise. What is your strategy? Embrace of the pain of finishing dead last every year? Build from the middle? Hope to grow linearly? What will your draft picks look like under each scenario? You can run a simluation below!</p>
+        <p>Enter what lottery seeds you expect to have over the next five years of your rebuild, then hit the "Simulate lotteries!" button to generate your draft picks.<p>
+        <div id="default">
+            <p>1 = worst team in the league, 14 = 14th-worst team in the league.</p>
+            <p><strong>Bold number</strong> = Congratulations! You moved up in the lottery!</p>
+        </div>
+    </div>
+    <div id = "picks">
+    <!--    <input type="checkbox" id="checkbox" name="check"  onclick= "showHidden();">
+        <label for="check">Simulate old and new lottery odds</label><br>-->
+    
+
+
+        <table id="results">
+            <tr>
+                <th>Rebuild year</th>
+                <th>Lottery seed</th>
+                <th>Draft pick</th>
+                <!-- <th class = "hidden">Draft pick (old odds simulator)</th> -->
+            </tr>
+            <tr>
+                <td>1</td>
+                <td><span id="ranking1">
+                    <select name="first" id="firstRanking">
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3 selected>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5</option>
+                        <option value=6>6</option>
+                        <option value=7>7</option>
+                        <option value=8>8</option>
+                        <option value=9>9</option>
+                        <option value=10>10</option>
+                        <option value=11>11</option>
+                        <option value=12>12</option>
+                        <option value=13>13</option>
+                        <option value=14>14</option>
+                    </select>
+                </span></td>
+                <td><span id="number1"></span></td>
+                <!-- <td class = "hidden" ><span id="old1"></span></td> -->
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>
+                    <span id="ranking2">
+                    <select name="second" id="secondRanking">
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4 selected>4</option>
+                        <option value=5>5</option>
+                        <option value=6>6</option>
+                        <option value=7>7</option>
+                        <option value=8>8</option>
+                        <option value=9>9</option>
+                        <option value=10>10</option>
+                        <option value=11>11</option>
+                        <option value=12>12</option>
+                        <option value=13>13</option>
+                        <option value=14>14</option>
+                    </select>
+                    </span>  
+                </td>
+                <td><span id="number2"></span></td>
+                <!-- <td class = "hidden"><span id="old2"></span></td> -->
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>
+                    <span id="ranking3">
+                    <select name="third" id="thirdRanking">
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5</option>
+                        <option value=6>6</option>
+                        <option value=7 selected>7</option>
+                        <option value=8>8</option>
+                        <option value=9>9</option>
+                        <option value=10>10</option>
+                        <option value=11>11</option>
+                        <option value=12>12</option>
+                        <option value=13>13</option>
+                        <option value=14>14</option>    
+                    </select>
+                    </span>
+                </td>
+                <td><span id="number3"></span></td>
+                <!-- <td class = "hidden"><span id="old3"></span></td> -->
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>
+                    <span id="ranking4">
+                    <select name="fourth" id="fourthRanking">
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5</option>
+                        <option value=6>6</option>
+                        <option value=7 selected>7</option>
+                        <option value=8>8</option>
+                        <option value=9>9</option>
+                        <option value=10>10</option>
+                        <option value=11>11</option>
+                        <option value=12>12</option>
+                        <option value=13>13</option>
+                        <option value=14>14</option>
+                    </select>
+                    </span>
+                </td>
+                <td><span id="number4"></span></td>
+                <!-- <td class = "hidden"><span id="old4"></span></td> -->
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>
+                    <span id="ranking5">
+                    <select name="fifth" id="fifthRanking">
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=5>5</option>
+                        <option value=6>6</option>
+                        <option value=7 selected>7</option>
+                        <option value=8>8</option>
+                        <option value=9>9</option>
+                        <option value=10>10</option>
+                        <option value=11>11</option>
+                        <option value=12>12</option>
+                        <option value=13>13</option>
+                        <option value=14>14</option>
+                    </select>
+                    </span>
+                </td>
+                <td><span id="number5"></span></td>
+                <!-- <td class = "hidden"><span id="old5"></span></td> -->
+            </tr>
+        </table>
+   <!-- <div id = "addRemoveRows">
+       <button type="button" onclick="addRow()">Add row</button>
+        <button type="button" onclick="removeRow()">Remove row</button>
+    </div> -->
+        <div id = "buttons">
+            <button id = "b" onclick= "displayPick();">Simulate lotteries!</button>
+        </div>
+    </div>
+    <p>Select a preset scenario:</p>
+    <div id="presets">
+      <button id = "c" onclick= "trustTheProcess();">Trust the process</button>
+      <button id = "d" onclick= "middleBuild();">Build from the middle</button>
+      <button id = "d" onclick= "garPax();">GarPax it</button>
+      <button id = "d" onclick= "linearGrowth();">Linear growth</button>
+
+    </div>
+  
+    <div id="notes">
+        <p>Note: Inspiration for this website came from <a href="http://www.tankathon.com" target="_blank">Tankathon</a>. Check out his much more sophisticated lottery simluator!</p>
+        <p>Tankathon also has <a href="http://www.tankathon.com/pick_odds" target="_blank">the full lottery odds</a> that this page uses to randomly generate your team's draft picks.</p>
+        <p>Designed by Stephen Noh. <a href="http://www.twitter.com/StephNoh" target="_blank">My Twitter</a></p>
+    </div>
+  <script src="myscripts.js"></script>
+ </body>
+</html>
